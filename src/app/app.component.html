@@ -1,9 +1,11 @@
 <div class="min-h-screen flex bg-neutral-900">
-  <header class="w-72 fixed inset-y-0 border-r border-r-neutral-800">
-    <app-sidebar></app-sidebar>
+  <header class="w-72 fixed inset-y-0 border-r border-r-neutral-800" aria-label="Sidebar">
+    <nav>
+      <app-sidebar></app-sidebar>
+    </nav>
   </header>
 
-  <main class="flex-1 ml-72 overflow-y-auto container mx-auto px-4 py-8">
+  <main class="flex-1 ml-72 overflow-y-auto container mx-auto px-4 py-8" aria-label="Main Content">
     <router-outlet></router-outlet>
   </main>
 </div>

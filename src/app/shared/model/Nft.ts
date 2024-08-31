@@ -5,4 +5,5 @@ export interface Nft {
     curency: 'EUR' | 'USD';
     currentCurrencyPrice: number;
     description?: string;
+    partOfMedallion: boolean;
 }
