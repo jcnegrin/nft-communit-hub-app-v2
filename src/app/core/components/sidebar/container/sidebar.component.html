@@ -1,0 +1,20 @@
+<nav class="sidebar w-full p-4">
+  <div class="sidebar__content w-full">
+    <!-- Título -->
+    <h1 class="text-white text-xl mb-8">NFT Community Hub</h1>
+
+    <!-- Menú -->
+    @for (item of items; track $index) {
+    <div
+      class="sidebar__menu-item w-full p-2 flex flex-row rounded hover:bg-neutral-800 mb-2 items-center cursor-pointer"
+      [routerLink]="item.link"
+      [routerLinkActive]="'bg-neutral-800'"
+    >
+      <i class="text-neutral-50 mr-2" [ngClass]="item.icon"></i>
+      <a class="text-neutral-50">
+        {{ item.label }}
+      </a>
+    </div>
+    }
+  </div>
+</nav>
