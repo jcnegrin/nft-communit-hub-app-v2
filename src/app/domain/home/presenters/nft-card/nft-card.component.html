@@ -1,1 +1,36 @@
-<p>nft-card works!</p>
+<article class="flex flex-col p-4 relative">
+  <div class="relative">
+    <video
+      [src]="'videos/' + symbol.id + '.MP4'"
+      autoplay
+      loop
+      playsinline
+      [muted]="true"
+      preload="metadata"
+      class="w-full h-auto rounded"
+      aria-label="NFT Video"
+    >
+      Your browser does not support the video tag.
+    </video>
+    <div *ngIf="symbol.partOfMedallion" class="absolute bottom-2 left-2">
+      <span class="inline-block bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded">Medallion Piece</span>
+    </div>
+  </div>
+  <div class="mt-2">
+    <h2 class="text-lg font-semibold text-neutral-200 text-center sm:text-left">{{ symbol.name | titlecase }}</h2>
+    <div class="mt-4">
+      <div class="w-full flex flex-row justify-between">
+        <p class="text-sm sm:text-base text-neutral-200">SOL:</p>
+        <p class="text-sm sm:text-base text-neutral-200">{{ symbol.price }}</p>
+      </div>
+      <div class="w-full flex flex-row justify-between">
+        <p class="text-sm sm:text-base text-neutral-200">{{ symbol.curency }}:</p>
+        <p class="text-sm sm:text-base text-neutral-200">{{ symbol.price }}</p>
+      </div>
+      <div class="w-full flex flex-row justify-between">
+        <p class="text-sm sm:text-base text-neutral-200">Listed:</p>
+        <p class="text-sm sm:text-base text-neutral-200">{{ symbol.price }}</p>
+      </div>
+    </div>
+  </div>
+</article>

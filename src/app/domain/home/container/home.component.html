@@ -1,38 +1,32 @@
-<section id="home" class="home grid grid-cols-6 gap-4 justify-items-center items-stretch">
-  <article class="col-span-6 w-full bg-neutral-800 rounded p-4 h-80">
+<section id="home" class="home grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 justify-items-center items-stretch">
+  <!-- Collections Section -->
+  <article class="col-span-1 sm:col-span-2 lg:col-span-6 w-full bg-neutral-800 rounded p-4">
     <header>
       <h2 class="text-neutral-300 font-light text-xl">Collections</h2>
     </header>
-    <p>1</p>
+    <div class="flex gap-4 overflow-x-auto py-4">
+      @for (item of nfts; track $index) {
+        <div class="min-w-[16rem] sm:min-w-[18rem] bg-neutral-700 rounded"> <!-- Responsive card width -->
+          <app-nft-card [symbol]="item"></app-nft-card>
+        </div>
+      }
+    </div>
   </article>
-  <article class="col-span-2 w-full bg-neutral-800 rounded p-4 h-80">
+
+  <!-- Prices Section -->
+  <article class="col-span-1 sm:col-span-1 lg:col-span-4 w-full bg-neutral-800 rounded p-4">
     <header>
       <h2 class="text-neutral-300 font-light text-xl">Prices</h2>
     </header>
-    <p>2</p>
+    <div class="bg-neutral-700 rounded p-2 mt-4">
+      <app-price-table [symbols]="nfts"></app-price-table>
+    </div>
   </article>
-  <article class="col-span-4 w-full bg-neutral-800 rounded p-4 h-80">
+
+  <!-- Prices Chart Section -->
+  <article class="col-span-1 sm:col-span-1 lg:col-span-2 w-full bg-neutral-800 rounded p-4 h-full">
     <header>
       <h2 class="text-neutral-300 font-light text-xl">Prices chart</h2>
     </header>
-    <p>3</p>
-  </article>
-  <article class="col-span-2 w-full bg-neutral-800 rounded p-4 h-80">
-    <header>
-      <h2 class="text-neutral-300 font-light text-xl">Transactions</h2>
-    </header>
-    <p>4</p>
-  </article>
-  <article class="col-span-2 w-full bg-neutral-800 rounded p-4 h-80">
-    <header>
-      <h2 class="text-neutral-300 font-light text-xl">Transactions</h2>
-    </header>
-    <p>5</p>
-  </article>
-  <article class="col-span-2 w-full bg-neutral-800 rounded p-4 h-80">
-    <header>
-      <h2 class="text-neutral-300 font-light text-xl">Transactions</h2>
-    </header>
-    <p>6</p>
   </article>
 </section>
